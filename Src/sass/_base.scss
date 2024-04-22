@@ -1,0 +1,134 @@
+@import "varibale";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+:root {
+  font-size: 62.5%;
+  --btn-color:#{$color-btn};
+  --color-white-0: #fff;
+  --color-gray-300:#{$color-gray-300};
+  --color-gray-700:#{$color-gray-700};
+  --color-blue-300:#{$color-blue-300};
+  --color-blue-700:#{$color-blue-700};
+  --border-radius-sm:#{$border-radius-sm};
+  --border-radius-md:#{$border-radius-md};
+  --border-radius-xl:#{$border-radius-lg};
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: var(--color-gray-700);
+}
+
+h4 {
+  font-size: 1.8rem;
+  color: var(--color-gray-700);
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+body {
+  font-family: "Vazirmatn", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
+}
+
+.container {
+  width: 100vw;
+  max-width: calc(100vw - 10%);
+  margin: 4rem auto;
+}
+
+.view-request {
+  h2 {
+    margin-bottom: 4rem;
+  }
+}
+
+.request__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include mediaQuery('md') {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 4rem;
+  }
+
+  @include mediaQuery('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.request {
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+
+}
+
+.requset__header {
+  @include flex() {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  p {
+    margin-right: 1rem;
+    color: var(--color-blue-700);
+    font-weight: 500;
+  }
+
+  &+p {
+    margin-top: 1rem;
+  }
+}
+
+.request__date {
+  color: var(--color-gray-300);
+  font-size: 1.2rem;
+  flex: 1;
+  text-align: left;
+}
+
+.requset__user {
+  @include flex() {
+    align-items: end;
+    justify-content: flex-start;
+  }
+}
+
+.user__info {
+  flex: 1;
+
+  @include flex() {
+    align-items: center;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-sm);
+  }
+
+  p {
+    margin-right: 1rem;
+    font-weight: 700;
+    color: var(--color-gray-700);
+    display: inline;
+  }
+}

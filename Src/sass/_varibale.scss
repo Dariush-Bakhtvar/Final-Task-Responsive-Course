@@ -1,0 +1,62 @@
+$color-btn: #219F95;
+$color-white: #fff;
+$color-gray-300: #696969;
+$color-gray-700: #1E1E1E;
+$color-blue-300: #AFCEDD;
+$color-blue-700: #234894;
+$border-radius-sm: 6px;
+$border-radius-md: 8px;
+$border-radius-lg: 10px;
+
+$break-point-xs: 320px;
+$break-point-sm: 480px;
+$break-point-md: 768px;
+$break-point-lg: 1024px;
+$break-point-xl: 1208px;
+
+
+@mixin flex {
+  display: flex;
+  @content;
+}
+
+@mixin mediaQuery($size: 'sm', $width: min-width) {
+
+  @if($size=='xs') {
+    @media($width: $break-point-xs) {
+      @content
+    }
+  }
+
+  ;
+
+  @if($size=='sm') {
+    @media($width: $break-point-sm) {
+      @content
+    }
+  }
+
+  ;
+
+  @if($size=='md') {
+    @media($width: $break-point-md) {
+      @content
+    }
+  }
+
+  ;
+
+  @if($size=='lg') {
+    @media($width: $break-point-lg) {
+      @content
+    }
+  }
+
+  ;
+
+  @if($size=='xl') {
+    @media($width: $break-point-xl) {
+      @content
+    }
+  }
+}
